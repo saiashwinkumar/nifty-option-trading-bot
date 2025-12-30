@@ -81,9 +81,6 @@ Test confusion matrix (rows=true, cols=pred; labels are `-1`=down, `+1`=up):
 
 ![Actual vs predicted (test)](artifacts/actual_vs_pred_test.png)
 
-### Actual vs predicted (train)
-
-![Actual vs predicted (train)](artifacts/actual_vs_pred_train.png)
 
 ## Important caveats
 
