@@ -52,9 +52,30 @@ Measured by converting the predicted log-return into a predicted next-day averag
 
 `Ahat(t+1) = C(t) * exp(yhat(t))` and comparing against realized `A(t+1)`.
 
-- Train MAPE: **0.0038363**
-- Test MAPE: **0.0045298**
-- Test MAPE (>= 2024): **0.0040491**
+- Train MAPE: **0.38363%**
+- Test MAPE: **0.45298%**
+- Test MAPE (>= 2024): **0.40491%**
+
+### Direction hit rate + confusion matrix
+
+Direction is computed as `sign(y)`, where `y = log(A(t+1)) − log(C(t))`.
+
+- Train direction hit rate: **79.1146%**
+- Test direction hit rate: **54.5379%**
+
+Train confusion matrix (rows=true, cols=pred; labels are `-1`=down, `+1`=up):
+
+| true \ pred | -1 | +1 |
+|---:|---:|---:|
+| **-1** | 522 | 311 |
+| **+1** | 90 | 997 |
+
+Test confusion matrix (rows=true, cols=pred; labels are `-1`=down, `+1`=up):
+
+| true \ pred | -1 | +1 |
+|---:|---:|---:|
+| **-1** | 215 | 323 |
+| **+1** | 223 | 440 |
 
 ### Actual vs predicted (test)
 
