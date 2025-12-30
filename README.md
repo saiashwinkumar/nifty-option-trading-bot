@@ -46,6 +46,24 @@ Run the backtest:
 python -m nifty_option_trading_bot --start 2024-01-01 --capital 100000
 ```
 
+## Model evaluation (MAPE + plots)
+
+Measured by converting the predicted log-return into a predicted next-day average price:
+
+`Ahat(t+1) = C(t) * exp(yhat(t))` and comparing against realized `A(t+1)`.
+
+- Train MAPE: **0.0038363**
+- Test MAPE: **0.0045298**
+- Test MAPE (>= 2024): **0.0040491**
+
+### Actual vs predicted (test)
+
+![Actual vs predicted (test)](artifacts/actual_vs_pred_test.png)
+
+### Actual vs predicted (train)
+
+![Actual vs predicted (train)](artifacts/actual_vs_pred_train.png)
+
 ## Important caveats
 
 This is a **research** simulator, not a live trading system.
