@@ -1,0 +1,30 @@
+[project]
+name = "nifty-option-trading-bot"
+version = "0.1.0"
+description = "Expiry-day options trading research/backtest on NIFTY50 using quantile GBDT + conformal intervals."
+requires-python = ">=3.10"
+authors = [{ name = "saiashwinkumar" }]
+dependencies = [
+  "pandas>=2.1",
+  "numpy>=1.26",
+  "yfinance>=0.2.40",
+  "scikit-learn>=1.4",
+  "scipy>=1.11",
+  "matplotlib>=3.8",
+  "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
